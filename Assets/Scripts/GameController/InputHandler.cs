@@ -38,6 +38,21 @@ public class InputHandler : MonoBehaviour
             keyPressed = InputKeys.jump;
         }
 
+        //ESC
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            keyPressed = InputKeys.back;
+        }
+
+        //Enter
+        if(Input.GetKeyDown(KeyCode.Return)){
+            keyPressed = InputKeys.enter;
+        }
+
+        //Action
+        if(Input.GetKeyDown(KeyCode.E)){
+            keyPressed = InputKeys.action;
+        }
+
         //Testing Keys
         if(Input.GetKeyDown(KeyCode.I)){
             this.SendMessage("changeStatus", Status.main);
@@ -47,6 +62,9 @@ public class InputHandler : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.P)){
             this.SendMessage("changeStatus", Status.level);
+        }
+        else if(Input.GetKeyDown(KeyCode.U)){
+            this.SendMessage("changeScene", Scenes.tutorial);
         }
 
         //Send & Restart

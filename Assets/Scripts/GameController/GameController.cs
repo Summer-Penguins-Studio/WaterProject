@@ -50,6 +50,10 @@ public class GameController : MonoBehaviour
         statusHandler.keyPressed(key);    
     }
 
+    public bool playing(){
+        return this.statusHandler is LevelHandler;
+    }
+
     public void changeStatus(Status status){
         statusHandler = statusHash[status];
         Debug.Log("New Status " + status.ToString());
@@ -57,15 +61,14 @@ public class GameController : MonoBehaviour
 
     public void changeScene(Scenes scene){
         SceneManager.LoadSceneAsync(scenesHash[scene]);
-        /*
-        switch(scene){
-            case Scenes.main:
-                changeStatus(Status.main);
-                break;
-            default:
-                changeStatus(Status.level);
-                break;
+        if(scene == Scenes.main){
+            changeStatus(Status.main);
         }
-        */
+        else if(scene == Scenes.tutorial){
+            changeStatus(Status.level);
+        }
+        else if(scene == Scenes.level1){
+            changeStatus(Status.level);
+        }
     }
 }

@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour
         //Initialize Scenes HahsMap
         scenesHash.Add(Scenes.main, "MainMenu");
         scenesHash.Add(Scenes.tutorial, "Tutorial");
+        scenesHash.Add(Scenes.testing, "TestingScene");
     }
 
     private void keyInterpreter(InputKeys key){
@@ -68,6 +69,9 @@ public class GameController : MonoBehaviour
             changeStatus(Status.level);
         }
         else if(scene == Scenes.level1){
+            changeStatus(Status.level);
+        }
+        else if(scene == Scenes.testing){
             changeStatus(Status.level);
         }
     }

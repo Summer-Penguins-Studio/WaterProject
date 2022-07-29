@@ -11,5 +11,5 @@ public enum Status{
 }
 
 public enum Scenes{
-    main, tutorial, level1
+    main, tutorial, level1, testing
 }

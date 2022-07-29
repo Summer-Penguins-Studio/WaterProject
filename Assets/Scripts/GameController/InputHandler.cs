@@ -64,7 +64,7 @@ public class InputHandler : MonoBehaviour
             this.SendMessage("changeStatus", Status.level);
         }
         else if(Input.GetKeyDown(KeyCode.U)){
-            this.SendMessage("changeScene", Scenes.tutorial);
+            this.SendMessage("changeScene", Scenes.testing);
         }
 
         //Send & Restart

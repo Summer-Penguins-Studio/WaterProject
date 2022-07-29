@@ -5,6 +5,8 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     private GameObject player;
+    public int height;
+    public Quaternion rotation;
 
     void Awake(){
         player = GameObject.FindGameObjectWithTag("Player");
@@ -13,12 +15,18 @@ public class Camera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Working");
+        
+        this.transform.SetPositionAndRotation(new Vector3(0,height,-10), rotation);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 playerPosition = new Vector3(
+            player.transform.position.x,
+            player.transform.position.y + height,
+            this.transform.position.z
+        );
+        this.transform.SetPositionAndRotation(playerPosition, rotation);
     }
 }

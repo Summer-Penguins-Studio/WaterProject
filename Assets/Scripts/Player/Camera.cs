@@ -6,6 +6,7 @@ public class Camera : MonoBehaviour
 {
     private GameObject player;
     public int height;
+    public int depth;
     public Quaternion rotation;
 
     void Awake(){
@@ -16,7 +17,7 @@ public class Camera : MonoBehaviour
     void Start()
     {
         
-        this.transform.SetPositionAndRotation(new Vector3(0,height,-10), rotation);
+        this.transform.SetPositionAndRotation(new Vector3(0,height,depth), rotation);
     }
 
     // Update is called once per frame

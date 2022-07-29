@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameController : MonoBehaviour
 {
@@ -47,6 +48,14 @@ public class GameController : MonoBehaviour
         scenesHash.Add(Scenes.testing, "TestingScene");
     }
 
+    public void play(){
+        changeScene(Scenes.testing);
+    }
+
+    public void quit(){
+        Application.Quit();
+    }
+
     private void keyInterpreter(InputKeys key){
         statusHandler.keyPressed(key);    
     }
@@ -55,24 +64,27 @@ public class GameController : MonoBehaviour
         return this.statusHandler is LevelHandler;
     }
 
+    public void pause(bool isPLaying){
+        
+    }
+
     public void changeStatus(Status status){
         statusHandler = statusHash[status];
-        Debug.Log("New Status " + status.ToString());
     }
 
     public void changeScene(Scenes scene){
-        SceneManager.LoadSceneAsync(scenesHash[scene]);
+        AsyncOperation newScene = SceneManager.LoadSceneAsync(scenesHash[scene]);
         if(scene == Scenes.main){
-            changeStatus(Status.main);
-        }
-        else if(scene == Scenes.tutorial){
-            changeStatus(Status.level);
-        }
-        else if(scene == Scenes.level1){
-            changeStatus(Status.level);
-        }
-        else if(scene == Scenes.testing){
-            changeStatus(Status.level);
-        }
+                changeStatus(Status.main);
+            }
+            else if(scene == Scenes.tutorial){
+                changeStatus(Status.level);
+            }
+            else if(scene == Scenes.level1){
+                changeStatus(Status.level);
+            }
+            else if(scene == Scenes.testing){
+                changeStatus(Status.level);
+            }
     }
 }

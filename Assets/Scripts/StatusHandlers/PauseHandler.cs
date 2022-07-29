@@ -5,8 +5,8 @@ using UnityEngine;
 public class PauseHandler : ScriptableObject, IStatusHandler
 {
     public void keyPressed(InputKeys key){
-        if(key != InputKeys.empty)
-            Debug.Log("Pause " + key.ToString());
-            
+        if(key == InputKeys.back){
+            GameController.instance.changeStatus(Status.level);
+        } 
     }
 }

@@ -7,7 +7,6 @@ public class MainHandler : ScriptableObject, IStatusHandler
     public void keyPressed(InputKeys key){
         if(key != InputKeys.empty){
             Debug.Log("Main " + key.ToString());
-            
         }   
     }
 }

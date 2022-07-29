@@ -10,17 +10,21 @@ public class Move : MonoBehaviour
     public new Transform camera;
     private CharacterController characterController;
     private Vector3 movement = Vector3.zero;
+    public bool playing;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        playing = false;
     }
     void Update()
     {
-        Movement();
+        if(GameController.instance.playing()){
+            Movement();
+        }
     }
-    void Movement(){
 
+    void Movement(){
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
         if (hor != 0 || ver != 0)
@@ -38,5 +42,5 @@ public class Move : MonoBehaviour
             movement.y += gravity * Time.deltaTime;
             characterController.Move(movement);
         }
-    } 
+    }   
 }

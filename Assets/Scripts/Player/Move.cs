@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+    public LevelController controller;
     public float gravity = -9.8f;
     public float deltaMovementSpeed = 5f;
     public new Transform camera;
@@ -19,14 +20,13 @@ public class Move : MonoBehaviour
     }
     void Update()
     {
-        if(GameController.instance.playing()){
+        if(controller.isPlaying)
             Movement();
-        }
     }
 
     void Movement(){
-        float hor = Input.GetAxis("Horizontal");
-        float ver = Input.GetAxis("Vertical");
+        float hor = Input.GetAxisRaw("Horizontal");
+        float ver = Input.GetAxisRaw("Vertical");
         if (hor != 0 || ver != 0)
         {
             Vector3 forward = camera.forward;

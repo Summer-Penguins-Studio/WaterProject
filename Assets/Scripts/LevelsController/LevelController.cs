@@ -28,10 +28,12 @@ public class LevelController : MonoBehaviour
     public void pause(){
         isPlaying = false;
         pauseUI.SetActive(true);
+        playUI.SetActive(false);
     }
 
     public void play(){
         isPlaying = true;
         pauseUI.SetActive(false);
+        playUI.SetActive(true);
     }
 }

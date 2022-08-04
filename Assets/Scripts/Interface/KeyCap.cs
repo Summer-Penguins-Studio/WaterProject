@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class KeyCap : MonoBehaviour
 {
     public GameObject decoration;
-    public GameObject text;
+    public GameObject letter;
     public GameObject image;
+
+    public GameObject text;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,24 +23,33 @@ public class KeyCap : MonoBehaviour
         
     }
 
-    public void showDecoration(){
+    private void showDecoration(){
         decoration.SetActive(true);
     }
 
-    public void showLetter(string key){
+    public void show(string key, string message){
         showDecoration();
+        letter.SetActive(true);
+        if(key.Equals("Enter") || key.Equals("Space")){
+            showImage(key);
+        }
+        else {
+            letter.GetComponent<Text>().text = key;
+        }
         text.SetActive(true);
-        text.GetComponent<Text>().text = key;
+        text.GetComponent<Text>().text = "Presione [" + key + "] para activar " + message;
     }
 
-    public void showImage(){
-        showDecoration();
+    private void showImage(string key){
         image.SetActive(true);
     }
 
     public void hide(){
-        text.SetActive(false);
+        letter.GetComponent<Text>().text = null;
+        letter.SetActive(false);
         image.SetActive(false);
         decoration.SetActive(false);
+        text.GetComponent<Text>().text = "";
+        text.SetActive(false);
     }
 }

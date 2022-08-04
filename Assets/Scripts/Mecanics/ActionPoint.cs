@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeachingPoint : MonoBehaviour
+public class ActionPoint : MonoBehaviour
 {
     public GameObject keyCap;
+    public string show;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class TeachingPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider target){
         if(target.gameObject.CompareTag("Player")){
-            keyCap.GetComponent<KeyCap>().showLetter("E");
+            keyCap.GetComponent<KeyCap>().show(show, "");
         }
     }
     

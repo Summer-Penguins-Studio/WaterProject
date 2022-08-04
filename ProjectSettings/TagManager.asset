@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PausePanel
   - PlayingPanel
+  - Interactable
   layers:
   - Default
   - TransparentFX

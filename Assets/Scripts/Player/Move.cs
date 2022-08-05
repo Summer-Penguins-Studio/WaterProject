@@ -12,6 +12,8 @@ public class Move : MonoBehaviour
     private Vector3 movement = Vector3.zero;
     public bool playing;
 
+    public GameObject keyCap;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -47,7 +49,15 @@ public class Move : MonoBehaviour
 
     public void OnTriggerStay(Collider colision){
         if(colision.gameObject.CompareTag("Inter")){
-            
+            keyCap.GetComponent<KeyCap>().showAction(colision.gameObject.GetComponent<InterInfo>().key, 
+            colision.gameObject.GetComponent<InterInfo>().message, 
+            colision.gameObject.GetComponent<InterInfo>().activate);
+        }
+    }
+
+    public void OnTriggerExit(Collider colision){
+        if(colision.gameObject.CompareTag("Inter")){
+            keyCap.GetComponent<KeyCap>().hide();
         }
     }
 }

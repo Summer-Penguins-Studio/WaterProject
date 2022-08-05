@@ -669,7 +669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -104241862136772816, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Inter
       objectReference: {fileID: 0}
     - target: {fileID: 553547815185210251, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_Layer
@@ -677,7 +677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 553547815185210251, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Inter
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_Name
@@ -717,7 +717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6534816766901270159, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Inter
       objectReference: {fileID: 0}
     - target: {fileID: 8292718455628608528, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_Layer
@@ -725,7 +725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8292718455628608528, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Inter
       objectReference: {fileID: 0}
     - target: {fileID: 8482019781396132802, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1297,6 +1297,7 @@ GameObject:
   - component: {fileID: 1228278936}
   - component: {fileID: 1228278935}
   - component: {fileID: 1228278934}
+  - component: {fileID: 1228278932}
   m_Layer: 0
   m_Name: Palanca Boton
   m_TagString: Untagged
@@ -1319,6 +1320,21 @@ Transform:
   m_Father: {fileID: 1297919148}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1228278932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228278930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9d7f2c7dafdfb40a93e9f658b09627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: el Abastecimiento de Agua
+  key: E
+  activate: 1
 --- !u!64 &1228278934
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1388,6 +1404,34 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 553547815185210251, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
   m_PrefabInstance: {fileID: 675476265}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1247424836
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247424835}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.5, y: 5.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1247424837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247424835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9d7f2c7dafdfb40a93e9f658b09627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: el Filtro del Agua
+  key: E
+  activate: 1
 --- !u!64 &1247424839
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1467,6 +1511,7 @@ MonoBehaviour:
   deltaMovementSpeed: 7
   camera: {fileID: 119749785}
   playing: 0
+  keyCap: {fileID: 2050639680}
 --- !u!143 &1341365316
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1496,7 +1541,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1383011235 stripped
 GameObject:
@@ -1522,6 +1567,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2691839995787007375, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
   m_PrefabInstance: {fileID: 675476265}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1385036192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385036190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9d7f2c7dafdfb40a93e9f658b09627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: el Sistema de Calentamiento
+  key: E
+  activate: 1
 --- !u!64 &1385036194
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1536,6 +1596,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1161037615724889061, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
+--- !u!65 &1385036196
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385036190}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.5, y: 5.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1392405107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1549,7 +1622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45149c1c4068b7044bc5338c18c9482a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 527.9
+      value: 473.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45149c1c4068b7044bc5338c18c9482a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1670,6 +1743,34 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8292718455628608528, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
   m_PrefabInstance: {fileID: 675476265}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1449199779
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449199778}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.5, y: 5.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1449199780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449199778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9d7f2c7dafdfb40a93e9f658b09627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: el Sistema Automatizado
+  key: E
+  activate: 1
 --- !u!64 &1449199782
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1749,6 +1850,39 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -729298127850226869, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
+--- !u!1 &1789352117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6534816766901270159, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
+  m_PrefabInstance: {fileID: 675476265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1789352121
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789352117}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5166365, y: 1.9123167, z: 5.388297}
+  m_Center: {x: 0.00007138501, y: -0.31209612, z: -1.9359424}
+--- !u!114 &1789352122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789352117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9d7f2c7dafdfb40a93e9f658b09627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: el Flujo del Agua
+  key: E
+  activate: 1
 --- !u!1 &1824732118 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1733641412852533131, guid: 86caf1dfbd8187e4f87e49fbafa07a01, type: 3}
@@ -1845,6 +1979,34 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -104241862136772816, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
   m_PrefabInstance: {fileID: 675476265}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &2068727197
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068727196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.5, y: 5.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2068727198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068727196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9d7f2c7dafdfb40a93e9f658b09627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: el Flujo de Agua Contaminada
+  key: E
+  activate: 0
 --- !u!64 &2068727200
 MeshCollider:
   m_ObjectHideFlags: 0

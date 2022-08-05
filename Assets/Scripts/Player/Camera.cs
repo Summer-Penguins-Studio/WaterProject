@@ -9,6 +9,8 @@ public class Camera : MonoBehaviour
     public int depth;
     public Quaternion rotation;
 
+    public GameObject controller;
+
     void Awake(){
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -23,11 +25,24 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(controller.GetComponent<LevelController>().isPlaying){
+            followPlayer();
+        }
+
+    }
+
+    private void followPlayer(){
         Vector3 playerPosition = new Vector3(
             player.transform.position.x,
             player.transform.position.y + height,
-            this.transform.position.z
+            depth
         );
         this.transform.SetPositionAndRotation(playerPosition, rotation);
+    }
+
+    public void cinemaDoor(){
+        int rotationY;
+        int rotationX;
+        
     }
 }

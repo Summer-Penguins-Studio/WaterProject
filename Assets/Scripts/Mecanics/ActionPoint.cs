@@ -6,6 +6,7 @@ public class ActionPoint : MonoBehaviour
 {
     public GameObject keyCap;
     public string show;
+    public string message;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class ActionPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider target){
         if(target.gameObject.CompareTag("Player")){
-            keyCap.GetComponent<KeyCap>().show(show, "");
+            keyCap.GetComponent<KeyCap>().showTutorial(show, message);
         }
     }
     

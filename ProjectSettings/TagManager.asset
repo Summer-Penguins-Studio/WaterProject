@@ -6,15 +6,16 @@ TagManager:
   tags:
   - PausePanel
   - PlayingPanel
+  - Interactable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interactable
   - Water
   - UI
-  - 
-  - 
+  - CollisionsEvents
+  - Objects
   - 
   - 
   - 

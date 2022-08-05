@@ -18,7 +18,6 @@ public class Camera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         this.transform.SetPositionAndRotation(new Vector3(0,height,depth), rotation);
     }
 
@@ -41,8 +40,6 @@ public class Camera : MonoBehaviour
     }
 
     public void cinemaDoor(){
-        int rotationY;
-        int rotationX;
-        
+                
     }
 }

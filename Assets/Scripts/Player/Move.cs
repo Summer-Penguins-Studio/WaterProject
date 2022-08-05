@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 
 public class Move : MonoBehaviour
@@ -20,8 +19,10 @@ public class Move : MonoBehaviour
     }
     void Update()
     {
-        if(controller.isPlaying)
+        if(controller.isPlaying){
             Movement();
+            characterController.Move(new Vector3(0, gravity, 0) * Time.deltaTime);
+        }
     }
 
     void Movement(){
@@ -39,8 +40,14 @@ public class Move : MonoBehaviour
             direction.Normalize();
             movement = direction * deltaMovementSpeed * Time.deltaTime;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.09f);
-            movement.y += gravity * Time.deltaTime;
+            //movement.y += gravity * Time.deltaTime;
             characterController.Move(movement);
         }
     }   
+
+    public void OnTriggerStay(Collider colision){
+        if(colision.gameObject.CompareTag("Inter")){
+            
+        }
+    }
 }

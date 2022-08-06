@@ -12,12 +12,17 @@ public class Move : MonoBehaviour
     private Vector3 movement = Vector3.zero;
     public bool playing;
 
+    private Animator anim;
+
+    private int selectorAnim;
+
     public GameObject keyCap;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         playing = false;
+        anim = this.GetComponent<Animator>();
     }
     void Update()
     {
@@ -25,6 +30,8 @@ public class Move : MonoBehaviour
             Movement();
             characterController.Move(new Vector3(0, gravity, 0) * Time.deltaTime);
         }
+        Debug.Log(selectorAnim);
+        anim.SetInteger("animation", selectorAnim);
     }
 
     void Movement(){
@@ -42,8 +49,11 @@ public class Move : MonoBehaviour
             direction.Normalize();
             movement = direction * deltaMovementSpeed * Time.deltaTime;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.09f);
-            //movement.y += gravity * Time.deltaTime;
             characterController.Move(movement);
+            selectorAnim = 1;
+        }
+        else {
+            selectorAnim = 0;
         }
     }   
 
@@ -52,6 +62,10 @@ public class Move : MonoBehaviour
             keyCap.GetComponent<KeyCap>().showAction(colision.gameObject.GetComponent<InterInfo>().key, 
             colision.gameObject.GetComponent<InterInfo>().message, 
             colision.gameObject.GetComponent<InterInfo>().activate);
+            if(Input.GetKey(KeyCode.E) && controller.GetComponent<LevelController>().isPlaying){
+                Debug.Log(colision.gameObject.GetComponent<InterInfo>().message);
+                colision.gameObject.GetComponent<ILeaver>().activate();
+            }
         }
     }
 

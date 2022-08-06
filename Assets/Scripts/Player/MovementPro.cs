@@ -50,7 +50,6 @@ public class MovementPro : MonoBehaviour
             movement = direction * deltaMovementSpeed * Time.deltaTime;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.09f);
             rigi.MovePosition(this.transform.position + movement);
-            //rigi.AddForce(this.transform.position + movement);
             anim = 1;
         }
         else {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovementPro : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class MovementPro : MonoBehaviour
     private Animator animator;
     private int anim;
 
+    public GameObject keyCap;
+    public Text warning;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,37 +38,41 @@ public class MovementPro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hor = Input.GetAxisRaw("Horizontal");
-        ver = Input.GetAxisRaw("Vertical");
+        if(controller.isPlaying){
+            hor = Input.GetAxisRaw("Horizontal");
+            ver = Input.GetAxisRaw("Vertical");
 
-        input = new Vector3(hor, 0, ver);
+            input = new Vector3(hor, 0, ver);
 
-        CamDirection();
+            CamDirection();
 
-        movement = input.x * camRight + input.z * camForward;
-        movement *= speed;
+            movement = input.x * camRight + input.z * camForward;
+            movement *= speed;
 
-        SetGravity();
-        Jump();
-        player.Move(movement * Time.deltaTime);
+            SetGravity();
+            Jump();
+            player.Move(movement * Time.deltaTime);
 
-        if(hor != 0 || ver != 0){
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camForward * ver + camRight * hor), 0.09f);
-            anim = 1;
+            if(hor != 0 || ver != 0){
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camForward * ver + camRight * hor), 0.09f);
+                anim = 1;
+            }
+            else {
+                anim = 0;
+            }
+
+            if(player.velocity.y < 0 && !player.isGrounded){
+                gravity *= gravityFactor;
+            }
+            else {
+                gravity = 50;
+            }
+
+            animator.SetInteger("animation", anim);
         }
         else {
-            anim = 0;
+            animator.SetInteger("animation", 0);
         }
-
-        if(player.velocity.y < 0 && !player.isGrounded){
-            Debug.Log("Falling");
-            gravity *= gravityFactor;
-        }
-        else {
-            gravity = 50;
-        }
-
-        animator.SetInteger("animation", anim);
     }
 
     private void Jump(){
@@ -93,6 +101,24 @@ public class MovementPro : MonoBehaviour
         else {
             fall -= gravity * Time.deltaTime;
             movement.y = fall;
+        }
+    }
+
+    public void OnTriggerStay(Collider colision){
+        if(colision.gameObject.CompareTag("Inter")){
+            keyCap.GetComponent<KeyCap>().showAction(colision.gameObject.GetComponent<InterInfo>().key, 
+            colision.gameObject.GetComponent<InterInfo>().message, 
+            colision.gameObject.GetComponent<InterInfo>().activate);
+            if(Input.GetKey(KeyCode.E) && controller.GetComponent<LevelController>().isPlaying){
+                colision.gameObject.GetComponent<ILeaver>().activate();
+            }
+        }
+    }
+
+    public void OnTriggerExit(Collider colision){
+        if(colision.gameObject.CompareTag("Inter")){
+            keyCap.GetComponent<KeyCap>().hide();
+            warning.text = null;
         }
     }
 }

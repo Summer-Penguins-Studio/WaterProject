@@ -1,28 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Calentamiento : MonoBehaviour, ILeaver
 {
     public GameObject cover;
     public GameObject controller;
+    private Variables vars;
+    public Text warning;
     private bool cinema;
     private bool active;
     private bool firstTime = true;
     public Camera cam;
+
+    void Start(){
+        vars = controller.GetComponent<Variables>();
+    }
     public void activate(){
-        cinema = true;
-        if(firstTime){
-            firstTime = false;
-            Debug.Log("First Time");
-            cam.cinemaCover();
-        }
-        controller.GetComponent<LevelController>().isPlaying = false;
-        if(active == true){
-            active = false;
+        if(vars.filtroAgua){
+            warning.text = null;
+            cinema = true;
+            if(firstTime){
+                firstTime = false;
+                cam.cinemaCover();
+            }
+            controller.GetComponent<LevelController>().isPlaying = false;
+            if(active == true){
+                active = false;
+            }
+            else {
+                active = true;
+            }
         }
         else {
-            active = true;
+            warning.text = "El Filtro de Agua debe estar activado";
         }
     }
 

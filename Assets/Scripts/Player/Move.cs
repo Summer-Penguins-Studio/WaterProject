@@ -82,21 +82,5 @@ public class Move : MonoBehaviour
         }
     }   
 
-    public void OnTriggerStay(Collider colision){
-        if(colision.gameObject.CompareTag("Inter")){
-            keyCap.GetComponent<KeyCap>().showAction(colision.gameObject.GetComponent<InterInfo>().key, 
-            colision.gameObject.GetComponent<InterInfo>().message, 
-            colision.gameObject.GetComponent<InterInfo>().activate);
-            if(Input.GetKey(KeyCode.E) && controller.GetComponent<LevelController>().isPlaying){
-                Debug.Log(colision.gameObject.GetComponent<InterInfo>().message);
-                colision.gameObject.GetComponent<ILeaver>().activate();
-            }
-        }
-    }
-
-    public void OnTriggerExit(Collider colision){
-        if(colision.gameObject.CompareTag("Inter")){
-            keyCap.GetComponent<KeyCap>().hide();
-        }
-    }
+    
 }

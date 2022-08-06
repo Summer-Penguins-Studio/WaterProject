@@ -7,6 +7,10 @@ public class Move : MonoBehaviour
     public LevelController controller;
     public float gravity = -9.8f;
     public float deltaMovementSpeed = 5f;
+    public float jumpForce;
+    private float ySpeed;
+    private float xSpeed;
+    private float zSpeed;
     public new Transform camera;
     private CharacterController characterController;
     private Vector3 movement = Vector3.zero;
@@ -26,12 +30,34 @@ public class Move : MonoBehaviour
     }
     void Update()
     {
+        movement = Vector3.zero;
         if(controller.isPlaying){
+            ySpeed = gravity;
+            SetGravity();
+            Jump();
             Movement();
-            characterController.Move(new Vector3(0, gravity, 0) * Time.deltaTime);
+            Debug.Log("Before ySpeed:" + movement.y);
+            movement.y = ySpeed;
+            Debug.Log("After ySpeed:" + movement.y);
+            characterController.Move(movement * Time.deltaTime);
         }
-        Debug.Log(selectorAnim);
         anim.SetInteger("animation", selectorAnim);
+    }
+
+    private void Jump(){
+        if(Input.GetKeyDown(KeyCode.Space)){
+            Debug.Log("Jump");
+            ySpeed = jumpForce;
+        }
+    }
+
+    private void SetGravity(){
+        if(characterController.isGrounded){
+            ySpeed = gravity * Time.deltaTime;
+        }
+        else{
+            ySpeed += gravity * Time.deltaTime;
+        }
     }
 
     void Movement(){
@@ -47,9 +73,8 @@ public class Move : MonoBehaviour
             right.Normalize();
             Vector3 direction = forward * ver + right * hor;
             direction.Normalize();
-            movement = direction * deltaMovementSpeed * Time.deltaTime;
+            movement = direction * deltaMovementSpeed;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.09f);
-            characterController.Move(movement);
             selectorAnim = 1;
         }
         else {

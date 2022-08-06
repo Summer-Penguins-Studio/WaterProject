@@ -39,7 +39,8 @@ public class Camera : MonoBehaviour
         this.transform.SetPositionAndRotation(playerPosition, rotation);
     }
 
-    public void cinemaDoor(){
-                
+    public void cinemaCover(){
+        Debug.Log("Cinema");
+        this.transform.SetPositionAndRotation(this.transform.position, new Quaternion(0, 180, 0, 0));
     }
 }

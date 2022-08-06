@@ -18,7 +18,7 @@ public class MainController : MonoBehaviour
     }
 
     public void Play(){
-        SceneManager.LoadSceneAsync("TestingScene");
+        SceneManager.LoadSceneAsync("Tutorial");
     }
 
     public void Quit(){

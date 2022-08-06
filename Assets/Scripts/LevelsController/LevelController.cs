@@ -32,6 +32,7 @@ public class LevelController : MonoBehaviour
     }
 
     public void play(){
+        Debug.Log("Play");
         isPlaying = true;
         pauseUI.SetActive(false);
         playUI.SetActive(true);

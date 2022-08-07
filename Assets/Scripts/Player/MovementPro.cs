@@ -140,7 +140,7 @@ public class MovementPro : MonoBehaviour
         if(colision.gameObject.CompareTag("Inter") && state == State.normal){
             keyCap.GetComponent<KeyCap>().showAction(colision.gameObject.GetComponent<InterInfo>().key, 
             colision.gameObject.GetComponent<InterInfo>().message, 
-            colision.gameObject.GetComponent<InterInfo>().activate);
+            colision.gameObject.GetComponent<InterInfo>().active);
             if(Input.GetKeyDown(KeyCode.E) && controller.GetComponent<LevelController>().isPlaying){
                 colision.gameObject.GetComponent<ILeaver>().activate();
             }

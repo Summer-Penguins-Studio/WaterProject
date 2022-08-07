@@ -25,4 +25,16 @@ public class Variables : MonoBehaviour
     {
         
     }
+
+    public bool asignateLeaver(ELeaver leaver){
+        bool retornar = false;
+        switch(leaver){
+            case ELeaver.calentamiento: retornar = sistemaCalentamiento; break;
+            case ELeaver.flujo: retornar = flujoAgua; break;
+            case ELeaver.filtro: retornar = filtroAgua; break;
+            case ELeaver.automatizado: retornar = sistemaAutomatizado; break;
+            case ELeaver.contaminada: retornar = aguaContaminada; break;
+        }
+        return retornar;
+    }
 }

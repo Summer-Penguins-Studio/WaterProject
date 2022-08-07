@@ -387,6 +387,158 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5744131744648393654, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
+--- !u!1 &193662911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193662912}
+  - component: {fileID: 193662918}
+  - component: {fileID: 193662917}
+  - component: {fileID: 193662916}
+  - component: {fileID: 193662915}
+  - component: {fileID: 193662914}
+  - component: {fileID: 193662913}
+  m_Layer: 0
+  m_Name: Palanca.001UV.004 (1)
+  m_TagString: Inter
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &193662912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193662911}
+  m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
+  m_LocalPosition: {x: -0, y: -45.9551, z: -566.7}
+  m_LocalScale: {x: 2.0949543, y: 2.0949543, z: 2.0949543}
+  m_Children:
+  - {fileID: 1561025783}
+  m_Father: {fileID: 2069610742}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &193662913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193662911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370fb244727ce47449823a9cebd6620f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cover: {fileID: 1564359780}
+  controller: {fileID: 1522723411}
+  vars: {fileID: 0}
+  warning: {fileID: 106077501}
+  cinema: 0
+  active: 0
+  firstTime: 1
+  cam: {fileID: 921594932}
+--- !u!114 &193662914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193662911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9d7f2c7dafdfb40a93e9f658b09627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: el Sistema de Calentamiento
+  key: E
+  activate: 1
+  valid: 0
+  action: 0
+  palanca: {fileID: 1561025783}
+--- !u!65 &193662915
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193662911}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.5, y: 5.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &193662916
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193662911}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1161037615724889061, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
+--- !u!23 &193662917
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193662911}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 12d806cea8d493b4f94b864e1981c0d7, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &193662918
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193662911}
+  m_Mesh: {fileID: 1161037615724889061, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
 --- !u!1 &397998610 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1733641412852533131, guid: 86caf1dfbd8187e4f87e49fbafa07a01, type: 3}
@@ -528,11 +680,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427c34bbbc9f6ea43ba54941bea94bef, type: 3}
---- !u!4 &505311076 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8557699432955454289, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
-  m_PrefabInstance: {fileID: 675476265}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &523021926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8846536862503199205, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
@@ -790,7 +937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7486718981749743700, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_RootOrder
-      value: 35
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: -6940895511443698281, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_Layer
@@ -866,7 +1013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2503144027228040204, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_RootOrder
-      value: 36
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2503144027228040204, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_LocalScale.x
@@ -962,7 +1109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8482019781396132802, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 8482019781396132802, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1694,6 +1841,8 @@ MonoBehaviour:
   message: el Filtro del Agua
   key: E
   activate: 1
+  valid: 0
+  action: 0
   palanca: {fileID: 523021926}
 --- !u!65 &1247424839
 BoxCollider:
@@ -1720,7 +1869,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faae4e5afe5bb30409d02f81ed497186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  vars: {fileID: 0}
+  controller: {fileID: 1522723411}
   water: {fileID: 2005414965}
   activated: 0
 --- !u!1 &1263961459 stripped
@@ -1867,6 +2017,25 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 4, z: 0}
+--- !u!95 &1341365316
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341365313}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!135 &1341365317
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1904,81 +2073,11 @@ MonoBehaviour:
   llaveAgua: {fileID: 0}
   keyCap: {fileID: 538604716}
   warning: {fileID: 106077501}
---- !u!1 &1378167014
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1378167015}
-  - component: {fileID: 1378167017}
-  - component: {fileID: 1378167016}
-  m_Layer: 0
-  m_Name: help1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1378167015
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378167014}
-  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: -0, y: -20.02, z: -259.24}
-  m_LocalScale: {x: 2.9823184, y: 1, z: 0.27328}
-  m_Children: []
-  m_Father: {fileID: 2069610742}
-  m_RootOrder: 33
-  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
---- !u!64 &1378167016
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378167014}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &1378167017
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378167014}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1385036190 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2691839995787007375, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
   m_PrefabInstance: {fileID: 675476265}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1385036192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385036190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9d7f2c7dafdfb40a93e9f658b09627, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: el Sistema de Calentamiento
-  key: E
-  activate: 1
-  palanca: {fileID: 505311076}
 --- !u!64 &1385036194
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2006,22 +2105,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.5, y: 5.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1385036197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385036190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 370fb244727ce47449823a9cebd6620f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cover: {fileID: 1564359780}
-  controller: {fileID: 1522723411}
-  warning: {fileID: 106077501}
-  cam: {fileID: 921594932}
 --- !u!1001 &1392405107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2637,6 +2720,8 @@ MonoBehaviour:
   message: el Sistema Automatizado
   key: E
   activate: 1
+  valid: 0
+  action: 0
   palanca: {fileID: 1795943745}
 --- !u!64 &1449199782
 MeshCollider:
@@ -2665,6 +2750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1522723411}
+  vars: {fileID: 0}
   warning: {fileID: 106077501}
 --- !u!1 &1522723411 stripped
 GameObject:
@@ -2688,6 +2774,88 @@ MonoBehaviour:
   flujoAgua: 0
   aguaContaminada: 0
   filtroAgua: 1
+--- !u!1 &1561025782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1561025783}
+  - component: {fileID: 1561025785}
+  - component: {fileID: 1561025784}
+  m_Layer: 0
+  m_Name: Plano.002
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1561025783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561025782}
+  m_LocalRotation: {x: 0, y: 0, z: -3.2184054e-15, w: 1}
+  m_LocalPosition: {x: -0.000030517578, y: 0, z: -0.31262398}
+  m_LocalScale: {x: 0.27596846, y: 0.27596846, z: 0.27596846}
+  m_Children: []
+  m_Father: {fileID: 193662912}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1561025784
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561025782}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 12d806cea8d493b4f94b864e1981c0d7, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1561025785
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561025782}
+  m_Mesh: {fileID: 9209956430974521048, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
 --- !u!1 &1564359780 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2824259029863565368, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
@@ -2838,7 +3006,9 @@ MonoBehaviour:
   message: el Flujo del Agua
   key: E
   activate: 1
-  palanca: {fileID: 0}
+  valid: 0
+  action: 0
+  palanca: {fileID: 1561025783}
 --- !u!4 &1795943745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4246619750707434064, guid: a3119b8d22e2c124ebeabdd0b814e784, type: 3}
@@ -2963,6 +3133,8 @@ MonoBehaviour:
   message: el Flujo de Agua Contaminada
   key: E
   activate: 0
+  valid: 0
+  action: 0
   palanca: {fileID: 1709826293}
 --- !u!114 &2068727199
 MonoBehaviour:
@@ -2976,7 +3148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8672771c8ec4b048a4f9f416c0b95fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  vars: {fileID: 0}
+  controller: {fileID: 1522723411}
 --- !u!64 &2068727200
 MeshCollider:
   m_ObjectHideFlags: 0

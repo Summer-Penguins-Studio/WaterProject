@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 public class MovementPro : MonoBehaviour
 {
+    private enum State {normal, water, gas};
+
+    public GameObject normalModel;
+    public GameObject normalOther;
+    public GameObject waterModel;
+    public GameObject gasModel;
+
+    State state;
     public float speed;
     public float gravity;
     public float gravityFactor;
@@ -37,6 +45,7 @@ public class MovementPro : MonoBehaviour
         player = this.GetComponent<CharacterController>();
         controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
         animator = this.GetComponent<Animator>();
+        state = State.normal;
     }
 
     // Update is called once per frame
@@ -55,6 +64,7 @@ public class MovementPro : MonoBehaviour
 
             SetGravity();
             Jump();
+            Watering();
             player.Move(movement * Time.deltaTime);
 
             if(hor != 0 || ver != 0){
@@ -71,8 +81,9 @@ public class MovementPro : MonoBehaviour
             else {
                 gravity = 50;
             }
-
-            animator.SetInteger("animation", anim);
+            if(state == State.normal){
+                animator.SetInteger("animation", anim);
+            }
         }
         else {
             animator.SetInteger("animation", 0);
@@ -80,9 +91,26 @@ public class MovementPro : MonoBehaviour
     }
 
     private void Jump(){
-        if(player.isGrounded && Input.GetAxisRaw("Jump") > 0){
+        if(player.isGrounded && Input.GetAxisRaw("Jump") > 0 && state == State.normal){
             fall = jumpForce;
             movement.y = fall;
+        }
+    }
+
+    private void Watering(){
+        if(player.isGrounded && Input.GetKeyDown(KeyCode.C)){
+            if(state == State.normal){
+                state = State.water;
+                normalModel.SetActive(false);
+                normalOther.SetActive(false);
+                waterModel.SetActive(true);
+            }
+            else if(state == State.water){
+                state = State.normal;
+                normalModel.SetActive(true);
+                normalOther.SetActive(true);
+                waterModel.SetActive(false);
+            }
         }
     }
 
@@ -109,7 +137,7 @@ public class MovementPro : MonoBehaviour
     }
 
     public void OnTriggerStay(Collider colision){
-        if(colision.gameObject.CompareTag("Inter")){
+        if(colision.gameObject.CompareTag("Inter") && state == State.normal){
             keyCap.GetComponent<KeyCap>().showAction(colision.gameObject.GetComponent<InterInfo>().key, 
             colision.gameObject.GetComponent<InterInfo>().message, 
             colision.gameObject.GetComponent<InterInfo>().activate);
@@ -126,7 +154,7 @@ public class MovementPro : MonoBehaviour
     }
 
     public void OnTriggerExit(Collider colision){
-        if(colision.gameObject.CompareTag("Inter")){
+        if(colision.gameObject.CompareTag("Inter")  && state == State.normal){
             keyCap.GetComponent<KeyCap>().hide();
             warning.text = null;
         }

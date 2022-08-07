@@ -40,7 +40,6 @@ public class Camera : MonoBehaviour
     }
 
     public void cinemaCover(){
-        Debug.Log("Cinema");
         this.transform.SetPositionAndRotation(this.transform.position, new Quaternion(0, 180, 0, 0));
     }
 }

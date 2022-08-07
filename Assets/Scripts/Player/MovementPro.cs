@@ -23,6 +23,10 @@ public class MovementPro : MonoBehaviour
     private Animator animator;
     private int anim;
 
+
+    public GameObject palancaAgua;
+    public GameObject llaveAgua;
+    private GameObject cover;
     public GameObject keyCap;
     public Text warning;
 
@@ -109,8 +113,14 @@ public class MovementPro : MonoBehaviour
             keyCap.GetComponent<KeyCap>().showAction(colision.gameObject.GetComponent<InterInfo>().key, 
             colision.gameObject.GetComponent<InterInfo>().message, 
             colision.gameObject.GetComponent<InterInfo>().activate);
-            if(Input.GetKey(KeyCode.E) && controller.GetComponent<LevelController>().isPlaying){
+            if(Input.GetKeyDown(KeyCode.E) && controller.GetComponent<LevelController>().isPlaying){
                 colision.gameObject.GetComponent<ILeaver>().activate();
+            }
+            if(Input.GetKey(KeyCode.Z) && controller.GetComponent<LevelController>().isPlaying){
+                if(cover != null){
+                    cover.GetComponent<PalancaAgua>().Desapear();
+                }
+                cover = Instantiate(palancaAgua, colision.gameObject.transform.position, colision.gameObject.transform.rotation);
             }
         }
     }

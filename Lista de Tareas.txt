@@ -1,0 +1,22 @@
+Nombre: A Tear's Journey
+
+Menú Principal:
+1. Logo
+2. Título
+3. Pantalla de Créditos
+4. Música del Menú
+
+Nivel:
+1. Escalar Mapa(Recortar Charcos)
+2. Mecánica del Gas + Modelo -------------------------------------------------
+3. Mecánica del Modo Líquido + Modelo ----------------------------------------
+5. Animación del Salto
+6. Mecánica del Agua Contaminada ---------------------------------------------
+7. Fondos y Pre-Fondos, Ambientación
+8. Luces y Post-Procesado
+9. Puzzle --------------------------------------------------------------------
+10. Mecánica de Cubrir -------------------------------------------------------
+
+Si da Tiempo:
+1. Material del Player
+2. Texturas de los Tanques

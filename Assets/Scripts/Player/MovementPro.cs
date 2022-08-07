@@ -94,6 +94,9 @@ public class MovementPro : MonoBehaviour
         if(player.isGrounded && Input.GetAxisRaw("Jump") > 0 && state == State.normal){
             fall = jumpForce;
             movement.y = fall;
+            animator.SetBool("jumping", true);
+        } else if(player.isGrounded){
+            animator.SetBool("jumping", false);
         }
     }
 

@@ -21,11 +21,9 @@ public class Calentamiento : MonoBehaviour, ILeaver
         if(vars.filtroAgua){
             warning.text = null;
             cinema = true;
-            if(firstTime){
-                firstTime = false;
-                cam.cinemaCover();
-            }
             controller.GetComponent<LevelController>().isPlaying = false;
+            this.GetComponent<InterInfo>().rotate();
+            vars.sistemaCalentamiento = !vars.sistemaCalentamiento;
             if(active == true){
                 active = false;
             }

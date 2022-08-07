@@ -22,11 +22,11 @@ public class DoorClosing : MonoBehaviour
     {
         if(cinema){
             if(cinema && door.transform.position.y > -1){
-                door.transform.Translate(new Vector3(0, 0, - 10 * Time.deltaTime));
+                door.transform.Translate(new Vector3(0, 0, - 25 * Time.deltaTime));
             }
             else if(!closed){
                 closed = true;
-                controller.GetComponent<LevelController>().isPlaying = true;
+                //controller.GetComponent<LevelController>().isPlaying = true;
                 cinema = false;
             }
         }
@@ -35,7 +35,7 @@ public class DoorClosing : MonoBehaviour
     public void OnTriggerEnter(Collider player){
         if(!closed && player.gameObject.CompareTag("Player")){
             cinema = true;
-            controller.GetComponent<LevelController>().isPlaying = false;
+            //controller.GetComponent<LevelController>().isPlaying = false;
         }
     }
 }

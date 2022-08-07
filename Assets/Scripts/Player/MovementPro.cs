@@ -13,6 +13,7 @@ public class MovementPro : MonoBehaviour
     public GameObject gasModel;
 
     State state;
+    public int life;
     public float speed;
     public float gravity;
     public float gravityFactor;
@@ -144,7 +145,7 @@ public class MovementPro : MonoBehaviour
             keyCap.GetComponent<KeyCap>().showAction(colision.gameObject.GetComponent<InterInfo>().key, 
             colision.gameObject.GetComponent<InterInfo>().message, 
             colision.gameObject.GetComponent<InterInfo>().activate);
-            if(Input.GetKeyDown(KeyCode.E) && controller.GetComponent<LevelController>().isPlaying){
+            if(Input.GetKey(KeyCode.X) && controller.GetComponent<LevelController>().isPlaying){
                 colision.gameObject.GetComponent<ILeaver>().activate();
             }
             if(Input.GetKey(KeyCode.Z) && controller.GetComponent<LevelController>().isPlaying){

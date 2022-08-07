@@ -5,4 +5,5 @@ using UnityEngine;
 public interface ILeaver
 {
     public void activate();
+    public bool actionEnded();
 }

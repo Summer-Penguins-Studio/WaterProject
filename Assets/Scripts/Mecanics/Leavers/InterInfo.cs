@@ -7,6 +7,7 @@ public class InterInfo : MonoBehaviour
     public string message;
     public string key;
     public bool active;
+    public bool activate;
     public ELeaver leaver;
     private Variables vars;
     // Start is called before the first frame update
@@ -18,6 +19,6 @@ public class InterInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        active = vars.asignateLeaver(leaver);
     }
 }
